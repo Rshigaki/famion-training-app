@@ -1,0 +1,25 @@
+.auth
+  h2.auth__title 会員登録 
+  .card
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .field
+        = f.label :email, 'メールアドレス'
+        br
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        = f.label :password, 'パスワード'
+        - if @minimum_password_length
+          | (最低 
+          = @minimum_password_length
+          |  文字)
+        br
+        = f.password_field :password, autocomplete: "new-password"
+      .field
+        = f.label :password_confirmation, "パスワード再確認"
+        br
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      .actions
+        = f.submit "会員登録"
+      br
+    = render "users/shared/links"

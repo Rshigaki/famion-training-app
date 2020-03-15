@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :validatable
   
   def update_confirmation_number
-    update(confirmation_number: 123456)
+    update(confirmation_number: rand(100000..999999))
   end
 end

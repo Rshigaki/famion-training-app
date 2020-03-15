@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   
+  namespace :users do
+    get 'activates/create'
+    get 'activates/edit'
+    get 'activates/update'
+  end
   devise_for :users, :controllers => {
       :registrations => 'users/registrations',
       :sessions => 'users/sessions'
@@ -17,5 +22,9 @@ Rails.application.routes.draw do
   
   scope '/', module: :public do
     root to: 'top#index'
+  end
+  
+  namespace :users do
+    resource :activates
   end
 end

@@ -1,0 +1,2 @@
+module Users::ActivatesHelper
+end

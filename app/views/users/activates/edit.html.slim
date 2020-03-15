@@ -1,0 +1,13 @@
+.auth
+  .card
+    p 6桁の認証番号を入力してください。
+    = form_for :resource, url: users_activates_path, method: 'patch' do |f|
+      .field
+        = f.label :confirmation_number, '認証番号'
+        br
+        = f.text_field :confirmation_number
+      .actions
+        = f.submit '認証'
+
+= render 'users/shared/links'
+

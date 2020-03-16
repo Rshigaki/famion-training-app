@@ -11,8 +11,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super do 
+    super do
       resource.update_confirmation_number
+      ActivationMailer.send_confirm_to_user(resource).deliver
     end
   end
 

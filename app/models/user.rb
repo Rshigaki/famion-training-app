@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
   
+  def create
+    
+    byebug
+  end
+  
   def update_confirmation_number
     update(confirmation_number: rand(100000..999999))
   end

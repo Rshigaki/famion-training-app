@@ -34,6 +34,7 @@ gem 'html2slim'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'actionmailer'
 
 
 group :development, :test do

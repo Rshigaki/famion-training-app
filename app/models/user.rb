@@ -3,10 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
+  belongs_to :family, optional: true
   
-  def create
-    
-    byebug
+  def update_family_token
+    update(family_token: SecureRandom.hex(16))
   end
   
   def update_confirmation_number

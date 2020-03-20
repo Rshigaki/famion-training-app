@@ -1,0 +1,8 @@
+.auth
+  .card
+    p 招待コードを入力してください。
+    = form_for :token, url: invitation_path, method: 'patch' do |f|
+      .field
+        = f.text_field :family_token, required: true
+        br
+        = f.submit 'ペアを登録'

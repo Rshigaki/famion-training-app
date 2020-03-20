@@ -12,8 +12,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do
-      resource.update_confirmation_number
-      ActivationMailer.send_confirm_to_user(resource).deliver
+      if resource.valid?
+        resource.update_invitation_token
+        resource.update_confirmation_number
+        resource.create_family
+        ActivationMailer.send_confirm_to_user(resource).deliver
+      end
     end
   end
 

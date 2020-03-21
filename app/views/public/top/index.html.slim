@@ -5,6 +5,8 @@ br
   = current_user.invitation_token
   p です。
   br
+  - if current_user.family.phase_valid?
+    p = link_to 'アンケートに回答する', new_questions_path
   p = link_to 'ペアを登録する', edit_invitation_path(:id)
 br
 = link_to 'ログアウト', sign_out_path

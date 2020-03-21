@@ -3,4 +3,8 @@ class Family < ApplicationRecord
   def fixed?
     users.count == 2
   end
+  
+  def phase_valid?
+    phase != 'test'
+  end
 end

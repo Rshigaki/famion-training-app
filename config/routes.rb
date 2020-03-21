@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   scope '/', module: :public do
     root to: 'top#index'
     resources :invitations
+    resource :user_profiles
+    resource :phases
+    resource :questions
   end
   
   namespace :users do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_20_114010) do
+ActiveRecord::Schema.define(version: 2020_03_21_103747) do
 
   create_table "families", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_03_20_114010) do
     t.datetime "confirmed_at"
     t.integer "family_id"
     t.string "invitation_token", default: "token"
+    t.integer "age"
+    t.string "job"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

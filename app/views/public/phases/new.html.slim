@@ -1,0 +1,11 @@
+.auth
+  .card
+    p 交際フェーズを入力してください。
+    = form_for :phase, url: phases_path, method: 'post' do |f|
+      = f.radio_button :phase, :unmarried
+      = f.label :phase_unmarried, '結婚前'
+      br
+      = f.radio_button :phase, :married
+      = f.label :phase_married, '結婚後'
+      br
+      = f.submit '登録'

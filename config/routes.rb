@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'questionaires/new'
+  get 'questionaires/create'
   namespace :users do
     get 'activates/create'
     get 'activates/edit'

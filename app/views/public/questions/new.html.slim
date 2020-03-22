@@ -1,0 +1,14 @@
+.auth
+  .card
+    .question-count
+      p #{@position} / #{@question_count}問目
+    .question-title
+      = @current_question.content
+    .answer-options
+      = form_for :answer_option, url: questions_path(position: @position), method: 'post' do |f|
+        - @current_answer_options.each do |answer_option|
+          .answer-content
+            = f.radio_button :value, answer_option.value
+            = f.label :answer_option, answer_option.content
+        = f.submit '次の設問に進む'
+  = render 'public/shared/links'

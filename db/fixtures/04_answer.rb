@@ -1,7 +1,7 @@
 phase_marriage = Phase.find_by(name: '結婚前後')
 phase_birth = Phase.find_by(name: '出産前後')
 
-Answer.seed(:id,
+AnswerOption.seed(:id,
                   {id: 1, question: Question.find_by(phase: phase_marriage, content: '入籍したいと考えますか？'), content: '絶対にしたい', value: 0},
                   {id: 2, question: Question.find_by(phase: phase_marriage, content: '入籍したいと考えますか？'), content: '可能ならしたい', value: 1},
                   {id: 3, question: Question.find_by(phase: phase_marriage, content: '入籍したいと考えますか？'), content: 'どちらでも良い', value: 2},

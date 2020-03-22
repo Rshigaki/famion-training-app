@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable
   belongs_to :family, optional: true
+  has_many :answers
   
   def update_invitation_token
     update(invitation_token: SecureRandom.hex(16))

@@ -36,6 +36,7 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'actionmailer'
 gem 'seed-fu'
+gem 'postgresql'
 
 
 group :development, :test do

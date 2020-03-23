@@ -18,9 +18,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: famion_training_test
 
 production:
   <<: *default
-  famion_training_production
+  database: ddvte5bq63dvii
+  username: msuitnedgdeeik
+  password: 894239f3c66c5a8bcf0a70dffba40d30400a9a5865a03a0d700a2923edca5bdf
+
   

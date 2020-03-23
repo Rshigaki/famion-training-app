@@ -1,0 +1,10 @@
+= form_for :profile, url: user_profiles_path do |f|
+  = f.label :age, '年齢'
+  br
+  = f.select :age, (1..100).to_a, selected: current_user.age || 1
+  br
+  = f.label :job, '職業'
+  br
+  = f.select :job, %w[会社員 学生 フリーター], selected: current_user.job || '会社員'
+  br
+  = f.submit '登録'

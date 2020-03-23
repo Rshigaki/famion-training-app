@@ -1,0 +1,11 @@
+.question-count
+  p #{@position} / #{@question_count}問目
+  .question-title
+    = @current_question.content
+  .answer-options
+    = form_for :answer_option, url: questions_path(position: @position) do |f|
+      - @current_answer_options.each.with_index do |answer_option, i|
+        .answer-content
+          = f.radio_button :value, answer_option.value, checked: !!current_user.answers.find_by(question: @current_question, value: answer_option.value)
+          = f.label :answer_option, answer_option.content
+      = f.submit '次の設問に進む'

@@ -5,7 +5,7 @@ class Family < ApplicationRecord
     users.count == 2
   end
   
-  def phase_valid?
+  def phase_present?
     phase != 'test'
   end
 end

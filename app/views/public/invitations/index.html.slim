@@ -1,0 +1,6 @@
+.auth
+  .card
+    p あなたの招待コードは
+    p = @token
+    p です。
+    p = link_to '招待コードを入力する', edit_invitation_path(current_user.id)

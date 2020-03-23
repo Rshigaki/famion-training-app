@@ -17,4 +17,9 @@ class User < ApplicationRecord
   def create_family
     update(family: Family.create(name: 'test_family'))
   end
+  
+  def answered_all?
+    questions_count = Question.where(phase: family.phase).count
+    questions_count == answers.count
+  end
 end

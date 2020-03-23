@@ -1,0 +1,8 @@
+= form_for :phase, url: phases_path do |f|
+  = f.radio_button :id, 1, checked: current_user.family.phase.present? && current_user.family.phase.name == '結婚前後'
+  = f.label :phase_unmarried, '結婚前後'
+  br
+  = f.radio_button :id, 2, checked: current_user.family.phase.present? && current_user.family.phase.name == '出産前後'
+  = f.label :phase_married, '出産前後'
+  br
+  = f.submit '登録'

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resource :user_profiles
     resource :phases
     resource :questions
+    resource :configs
   end
   
   namespace :users do

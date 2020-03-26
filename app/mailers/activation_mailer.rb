@@ -5,7 +5,6 @@ class ActivationMailer < ApplicationMailer
     mail(
         :subject => 'It’s work!', 
         :from        => 'shigashan@gmail.com',
-        :return_path => 'shigashan@gmail.com',
         :to          => 'shigashan@gmail.com'
     )
   end

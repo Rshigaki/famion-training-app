@@ -35,6 +35,7 @@ gem 'rails-i18n'
 gem 'actionmailer'
 gem 'seed-fu'
 gem 'postgresql'
+gem 'mailgun_rails'
 
 
 group :development, :test do
